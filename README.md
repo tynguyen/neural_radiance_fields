@@ -1,5 +1,9 @@
-# Experiencing NERF
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
+<img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" />
+# NeRF Simplification
+This repo contains simple implementations of NeRF models packaged to ready-to-use modules which can be installed using `pip install`.
 
+---
 # Structure
 * notebooks: ipython notebooks that introduces NERF
 * nerf_pl: a Pytorch implementation that supports custom datasets
@@ -40,9 +44,18 @@ cd neural_radiance_fields
 poetry run pytest tests
 ```
 
+## (Optional) Publish to TestPyPi
+This is not working due to the dependence on torchsearchsorted package.
+```
+poetry config repositories.testpypi https://test.pypi.org/legacy/
+poetry publish -r testpypi
+```
+---
 
 # Getting started
 ## Simple Ipython Notebooks
 -[x] notebooks
 
-##
+# TODO
+- [ ] Remove local dependence in torchsearchsorted
+- [ ] Publish to Pypi
