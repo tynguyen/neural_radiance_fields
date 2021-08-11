@@ -5,7 +5,7 @@ exclude = ["*.pyc", "__pycache__", "nerf_pl/data", "nerf_pl/results", "nerf_pl/l
 include = ["nerf_pl"]
 license = "MIT"
 name = "nerf_pl"
-version = "0.1.0"
+version = "0.1.1"
 
 [tool.poetry.dependencies]
 PyMCubes = "^0.1.2"
@@ -18,14 +18,14 @@ open3d = "^0.13.0"
 opencv-python = "==4.2.0.34"
 plyfile = "^0.7.4"
 pycollada = "^0.7.1"
-pyglet = "^1.5.18"
+pyglet = "^1.5.15"
 python = "^3.8"
 pytorch-lightning = "==0.7.5"
 scikit-image = "^0.18.2"
 test-tube = "^0.7.5"
-torch = "==1.4.0"
+torch = "==1.9.0"
 torchsearchsorted = {git = "https://github.com/aliutkus/torchsearchsorted.git", rev = "1e0ffc3e0663ffda318b4e28348efd90313d08f3"}
-torchvision = "==0.5.0"
+torchvision = "==0.10.0"
 trimesh = "^3.9.24"
 
 [tool.poetry.dev-dependencies]
