@@ -5,7 +5,7 @@ exclude = ["*.pyc", "__pycache__", "nerf_pl/data", "nerf_pl/results", "nerf_pl/l
 include = ["nerf_pl"]
 license = "MIT"
 name = "nerf_pl"
-version = "0.1.1"
+version = "0.1.2"
 
 [tool.poetry.dependencies]
 PyMCubes = "^0.1.2"
@@ -20,7 +20,7 @@ plyfile = "^0.7.4"
 pycollada = "^0.7.1"
 pyglet = "^1.5.15"
 python = "^3.8"
-pytorch-lightning = "==0.7.5"
+pytorch-lightning = "==1.4.2"
 scikit-image = "^0.18.2"
 test-tube = "^0.7.5"
 torch = "==1.9.0"

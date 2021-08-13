@@ -1111,7 +1111,7 @@ six = ">=1.5"
 
 [[package]]
 name = "pytorch-lightning"
-version = "0.7.5"
+version = "1.4.2"
 description = "PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate."
 category = "main"
 optional = false
