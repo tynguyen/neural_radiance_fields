@@ -56,6 +56,50 @@ poetry publish -r testpypi
 ## Simple Ipython Notebooks
 -[x] notebooks
 
+
+## Train the model
+A script example to train the model can be found at `nerf_pl/scripts`.
+```
+ROOT_DIR="data/replica/room_0_array"
+# directory containing the data
+IMG_W=640  # image width (do not set too large)
+IMG_H=360  # image height (do not set too large)
+NUM_EPOCHS=30  # number of epochs to train (depending on how many images there are,
+# 20~30 might be enough)
+EXP="replica_room_0_array"  # name of the experience (arbitrary)
+
+# Normalize the sampled 3D points to the unit sphere without using NDC
+NORMALIZE_SAMPLED_POINTS="True"
+RAY_TO_NDC="False"
+python3 train.py \
+   --dataset_name llff \
+   --root_dir "$ROOT_DIR" \
+   --N_importance 64 --img_wh $IMG_W $IMG_H \
+   --num_epochs $NUM_EPOCHS --batch_size 1024 \
+   --optimizer adam --lr 5e-4 \
+   --normalize_sampled_points $NORMALIZE_SAMPLED_POINTS\
+   --ray_to_NDC $RAY_TO_NDC\
+   --lr_scheduler cosine \
+   --exp_name $EXP
+```
+There are two ways to convert coordinates of sampled 3D points to [-1, 1].
+* Use NDC
+```
+NORMALIZE_SAMPLED_POINTS="False"
+RAY_TO_NDC="True"
+```
+Only Z would be in [-1, 1].
+
+* Use scaling and shifting
+```
+NORMALIZE_SAMPLED_POINTS="True"
+CENTER_3DPOINTS=-0.0028,0.0005,-0.3630 # center of 3D points after scaling
+RAYS_SCALE_FACTOR=0.065 # Scaling factor to ensure 3D points' coordinates are within [-1, 1]
+RAY_TO_NDC="False"
+```
+All XYZ are converted to be in [-1, 1].
+
+
 # TODO
 - [ ] Remove local dependence in torchsearchsorted
 - [ ] Publish to Pypi
