@@ -8,6 +8,7 @@
       Need to give center_3dpoints and scale factor as the arguments when calling the dataset class
 - [x] Add scale to test_dataloader.py.
 - [x] Add docker scripts
+- [] Add training script for real-world data
 
 ## Changed
 
